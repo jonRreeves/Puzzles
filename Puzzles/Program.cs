@@ -8,47 +8,61 @@ namespace Puzzles
 
         static void Main(string[] args)
         {
+            // switch selector
             int selection;
 
+            // instantiate problems
             FizzBuzz fb = new FizzBuzz();
             SockMerchant sm = new SockMerchant();
             CountingValleys cv = new CountingValleys();
             JumpingOnTheClouds jc = new JumpingOnTheClouds();
             RepeatedString rs = new RepeatedString();
+            _2dArray a2d = new _2dArray();
+            ArrayLeftRotation alr = new ArrayLeftRotation();
 
             while (true)
             {
 
                 Console.WriteLine("Please enter a puzzle to solve: 1.FizzBuzz | 2. SockMerchant | 3. CountingValleys | 4. JumpingOnTheClouds \n" +
-                                  "                                5. RepeatedString");
+                                  "                                5. RepeatedString | 6. 2dArrayHourglass | 7. Arrays: Left Rotation");
                 selection = int.Parse(Console.ReadLine());
 
                 switch (selection)
                 {
                     case 1:
                         fb.Solution();
+                        Console.WriteLine();
                         break;
                     case 2:
-                        int n = 9;
-                        int[] ar = { 10, 20, 20, 10, 10, 30, 50, 10, 20 };
-                        sm.Solution(n, ar);
-                        n = 10;
-                        int[] ar2 = { 1, 1, 3, 1, 2, 1, 3, 3, 3, 3 };
-                        sm.Solution(n, ar2);                       
+                        sm.Solution(sm.GetTestInt(1), sm.GetTestArray(1));
+                        sm.Solution(sm.GetTestInt(2), sm.GetTestArray(2));
+                        Console.WriteLine();
                         break;
                     case 3:
-                        cv.Solution(8, "UDDDUDUU", 1);
-                        cv.Solution(12, "DDUUDDUDUUUD", 2);                       
+                        cv.Solution(cv.GetTestInt(1),cv.GetTestString(1), 1);
+                        cv.Solution(cv.GetTestInt(2),cv.GetTestString(2), 2);
+                        Console.WriteLine();
                         break;
-                    case 4:
-                        int[] ar3 = { 0, 0, 1, 0, 0, 1, 0 };
-                        jc.Solution(ar3);
-                        int[] ar4 = { 0, 0, 0, 1, 0, 0 };
-                        jc.Solution(ar4);                       
+                    case 4:                        
+                        jc.Solution(jc.GetTestArray(1));                        
+                        jc.Solution(jc.GetTestArray(2));
+                        Console.WriteLine();
                         break;
                     case 5:
-                        rs.Solution("aba",10);
-                        rs.Solution("a", 1000);                        
+                        rs.Solution(rs.GetTestString(1),rs.GetTestInt(1));
+                        rs.Solution(rs.GetTestString(2),rs.GetTestInt(2));
+                        Console.WriteLine();
+                        break;
+                    case 6:
+                        a2d.Solution(a2d.GetTest2dArray(1));
+                        a2d.Solution(a2d.GetTest2dArray(2));
+                        Console.WriteLine();
+                        break;
+                    case 7:
+                        alr.Solution(alr.GetTestArray(1), alr.GetTestInt(1));
+                        Console.ReadLine();
+                        alr.Solution(alr.GetTestArray(2), alr.GetTestInt(2));
+                        Console.WriteLine();
                         break;
                     default:
                         return;

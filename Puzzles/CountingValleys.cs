@@ -8,6 +8,12 @@ namespace Puzzles
     // problem definition @ https://www.hackerrank.com/challenges/counting-valleys/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=warmup
     class CountingValleys
     {
+        // sample test cases for the problem
+        readonly int testInt1 = 8;
+        readonly int testInt2 = 12;
+        readonly string testString1 = "UDDDUDUU";
+        readonly string testString2 = "DDUUDDUDUUUD";
+
         public void Solution(int n, string s, int drawnPath)
         {
             int count = 0;
@@ -59,5 +65,30 @@ namespace Puzzles
             Console.ReadKey();
             
         }
+
+        public int GetTestInt(int test)
+        {
+            if (test == 1)
+            {
+                return testInt1;
+            }
+            else
+            {
+                return testInt2;
+            }
+        }
+
+        public string GetTestString(int test)
+        {
+            if (test == 1)
+            {
+                return testString1;
+            }
+            else
+            {
+                return testString2;
+            }
+        }
+
     }
 }

@@ -10,6 +10,13 @@ namespace Puzzles
 
     class SockMerchant
     {
+        // sample test cases for SockMerchant
+        readonly int testInt1 = 9;
+        readonly int[] testArray1 = { 10, 20, 20, 10, 10, 30, 50, 10, 20 };
+
+        readonly int testInt2 = 10;
+        readonly int[] testArray2 = { 1, 1, 3, 1, 2, 1, 3, 3, 3, 3 };
+
         public void Solution(int n, int[] ar)
         {
             var count = 0;
@@ -30,5 +37,33 @@ namespace Puzzles
             Console.ReadKey();
             
         }
+
+        public int GetTestInt(int test)
+        {
+            if (test == 1)
+            {
+                return testInt1;
+            }
+            else
+            {
+                return testInt2;
+            }
+            
+        }
+
+        public int[] GetTestArray(int test)
+        {
+            if (test == 1)
+            {
+                return testArray1;
+            }
+            else
+            {
+                return testArray2;
+            }
+        }
+
+
+
     }
 }
